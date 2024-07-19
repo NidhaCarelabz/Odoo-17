@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="pending_lead_remainder.list">
+      <field name="name">pending_lead_remainder list</field>
+      <field name="model">pending_lead_remainder.pending_lead_remainder</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="pending_lead_remainder.action_window">
+      <field name="name">pending_lead_remainder window</field>
+      <field name="res_model">pending_lead_remainder.pending_lead_remainder</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="pending_lead_remainder.action_server">
+      <field name="name">pending_lead_remainder server</field>
+      <field name="model_id" ref="model_pending_lead_remainder_pending_lead_remainder"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="pending_lead_remainder" id="pending_lead_remainder.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="pending_lead_remainder.menu_1" parent="pending_lead_remainder.menu_root"/>
+    <menuitem name="Menu 2" id="pending_lead_remainder.menu_2" parent="pending_lead_remainder.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="pending_lead_remainder.menu_1_list" parent="pending_lead_remainder.menu_1"
+              action="pending_lead_remainder.action_window"/>
+    <menuitem name="Server to list" id="pending_lead_remainder" parent="pending_lead_remainder.menu_2"
+              action="pending_lead_remainder.action_server"/>
+-->
+    <!-- Menu Definition -->
+    <menuitem id="menu_crm_lead_stages" parent="crm.menu_crm_config_lead" name="Lead Stages" sequence="0"
+              action="action_crm_lead_stages"/>
+    </data>
+  </data>
+</odoo>

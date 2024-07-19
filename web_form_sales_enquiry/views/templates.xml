@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="web_form_sales_enquiry_menu_contactus" model="website.menu">
+            <field name="name">Contact Us</field>
+            <field name="url">/contactus-salesenquiry</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">60</field>
+        </record>
+    </data>
+
+    <!-- sales enquiry form template  -->
+    <template id="contactus_salesenquiry" name="Contact Us">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12 mb-3">
+                        <div class="row">
+                            <div class="col-lg-2" style="z-index: 3; grid-area: 4 / 1 / 17 / 7;">
+                                <a data-bs-original-title="" title="" href="https://carelabz.com/" target="_blank">
+                                    <img src="https://erp.carelabz.com/web/image/638-86627b81/carelabs_logo_3%20%281%29%201.png" alt="https://erp.carelabz.com/web/image/638-86627b81/carelabs_logo_3%20%281%29%201.png" class="img img-fluid mx-auto o_we_custom_image" data-original-id="627" data-original-src="/web/image/627-670a0b0d/carelabs_logo_3%20%281%29%201.png" data-mimetype="image/png" data-resize-width="240" style="" data-bs-original-title="" title="" aria-describedby="tooltip110094" loading="lazy"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-lg-6" style="z-index: 1; grid-area: 4 / 1 / 17 / 7;">
+                                <h2>
+                                    <font class="text-gradient" style="background-image: linear-gradient(135deg, rgb(102, 153, 255) 0%, rgb(255, 51, 102) 100%);">
+                                        <span style="font-size: 36px;">
+                                            <strong>Get in Touch with Us!</strong>
+                                        </span>
+                                    </font>
+                                </h2>
+                                <p>
+                                    <br/>
+                                </p>
+                                <h5>
+                                    <span style="font-size: 20px; font-weight: 400; background-color: rgb(255, 255, 255);" class="text-black">
+                                        <em>
+                                            <font class="text-900" style="">
+                                                <span style="color: rgb(29, 30, 68); font-size: 20px; background-color: rgb(255, 255, 255); font-style: normal;">Fill out the form to learn more about our services,&amp;nbsp;pricing, or to request a quote.</span>
+                                            </font>
+                                        </em>
+                                    </span>
+                                </h5>
+                                <p>
+                                    <br/>
+                                </p>
+                                <img src="/web_form_sales_enquiry/static/src/img/proffesional_appealing_illustration.jpeg" alt="https://erp.carelabz.com/web/image/274-e7d2b97f/carelabsit_A_professional_clean_and_visually_appealing_illust_89cfe145-57b7-4b45-bc4a-78aa86cac01e_0%2520%25281%2529.svg" class="img img-fluid o_we_custom_image mx-auto d-block rounded rounded-circle" data-original-id="259" data-original-src="/web/image/259-d4cf8c31/carelabsit_A_professional_clean_and_visually_appealing_illust_89cfe145-57b7-4b45-bc4a-78aa86cac01e_0%20%281%29.png" data-mimetype="image/svg+xml" data-resize-width="1024" data-bs-original-title="" title="" aria-describedby="tooltip279427" style="width: 100% !important;" data-shape="web_editor/float/flt_planets_2" data-file-name="carelabsit_A_professional_clean_and_visually_appealing_illust_89cfe145-57b7-4b45-bc4a-78aa86cac01e_0%20%281%29.svg" data-shape-colors="#35979C;#685563;;;#383E45" data-original-mimetype="image/png" loading="lazy"/>
+                            </div>
+                            <div class="col-lg-6" style="grid-area: 1 / 7 / 16 / 13;z-index: 2;padding-top: 93px;">
+                                <form action="/contactus-salesenquiry/form/submit" class="sales_enquiry_form">
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Contact Name *</label>
+                                        <input type="text" class="form-control col-sm" name="contact_name" id="contact_name" required="true" />
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Company Name *</label>
+                                        <input type="text" class="form-control col-sm" name="web_sales_enq_comp_name" id="web_sales_enq_comp_name" required="true" />
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Email *</label>
+                                        <input type="email" class="form-control col-sm" name="web_sales_enq_email" id="web_sales_enq_email" required="true" />
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Country *</label>
+                                        <div class="col-sm">
+                                            <select id="web_sales_enq_country" name="web_sales_enq_country" class="form-control ">
+                                                <t t-foreach="country_ids" t-as="country" t-key="country.name">
+                                                    <option t-att-value="country.phone_code">
+                                                        <t t-esc="country.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Mobile *</label>
+                                         <!--<input type="text" class="form-control" name="country_code" id="country_code" readonly="readonly" />
+                                        <input type="tel" class="form-control col-sm" name="web_sales_enq_mobile" id="web_sales_enq_mobile" required="true" /> -->
+                                        <div class="col-sm d-flex align-items-center">
+                                            <input type="text" class="form-control" id="country_code" readonly="readonly" style="width: 60px; margin-right: 10px;color:#000000" />
+                                            <input type="tel" class="form-control col-sm" name="web_sales_enq_mobile" id="web_sales_enq_mobile" required="true" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Message / Subject *</label>
+                                        <input type="text" class="form-control col-sm" name="web_sales_enq_message" id="web_sales_enq_message" required="true" />
+                                    </div>
+                                    <div class="form-group row mb-sm-3">
+                                        <label for="name" class="col-sm-auto col-form-label" style="width: 150px">Services / Solutions</label>
+                                        <select class="form-control col-sm multiple-select-many2many " name="web_sales_enq_services" id="web_sales_enq_services" multiple="multiple">
+                                            <t t-foreach="crm_services_ids" t-as="service" t-key="service.name">
+                                                <option t-att-value="service.id">
+                                                    <t t-esc="service.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>                                    
+                                    <div class="footer">
+                                        <input type="hidden" class="form-control col-sm" name="web_sales_enq_services_vals" id="web_sales_enq_services_vals" />
+
+                                        <button type="submit" class="btn btn-primary" name='submit_button' value='submit'>Submit</button>
+                                        <button type="submit" class="btn btn-primary" name='schedule_button' value='schedule'>Submit &amp; Schedule</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row o_grid_mode" data-row-count="8" style="">
+                        <div class="o_colored_level o_grid_item o_grid_item_image g-col-lg-4 g-height-7 col-lg-4" style="z-index: 1; grid-area: 2 / 1 / 9 / 5;">
+                            <img src="/web_form_sales_enquiry/static/src/img/global_presence.jpeg" alt="https://erp.carelabz.com/web/image/405-7e49b952/carelabsit_Generate_a_high-resolution_realistic_image_of_a_3D_7a5e4994-f844-4e26-b277-991a709bad93_2.svg" class="img img-fluid mx-auto o_we_custom_image img-thumbnail" style="width: 100% !important;" data-original-id="389" data-original-src="/web/image/389-c0079437/carelabsit_Generate_a_high-resolution_realistic_image_of_a_3D_7a5e4994-f844-4e26-b277-991a709bad93_2.png" data-mimetype="image/svg+xml" data-resize-width="690" data-bs-original-title="" title="" aria-describedby="tooltip645987" loading="lazy" data-shape="web_editor/solid/sld_square_2" data-file-name="carelabsit_Generate_a_high-resolution_realistic_image_of_a_3D_7a5e4994-f844-4e26-b277-991a709bad93_2.svg" data-shape-colors="#35979C;;;;" data-original-mimetype="image/png"/>
+                        </div>
+                        <div class="o_colored_level o_grid_item shadow g-col-lg-8 g-height-7 col-lg-8" style="z-index: 2; grid-area: 2 / 5 / 9 / 13; box-shadow: rgb(206, 212, 218) 5px 6px 12px 0px !important;">
+                            <h2>
+                                <span style="font-size: 36px;">
+                                    <font class="text-gradient" style="background-image: linear-gradient(135deg, rgb(102, 153, 255) 0%, rgb(255, 51, 102) 100%);">
+                                        <strong class="o_default_snippet_text">OUR GLOBAL&amp;nbsp;</strong>
+                                    </font>
+                                </span>
+                                <span style="font-style: normal; font-weight: 600; font-size: 36px; background-image: linear-gradient(135deg, rgb(255, 204, 51) 0%, rgb(226, 51, 255) 100%);" class="text-gradient">
+                                    <font class="text-gradient o_default_snippet_text" style="background-image: linear-gradient(135deg, rgb(102, 153, 255) 0%, rgb(255, 51, 102) 100%);">PRESENCE</font>
+                                </span>
+                                <br/>
+                            </h2>
+                            <p>
+                                <br/>
+                            </p>
+                            <p>
+                                <span style="color: rgb(35, 52, 82);font-size: 18px;font-style: normal;font-weight: 400;background-color: rgb(255, 255, 255)">We offer locally comprehensible energy solutions that are adapted to each region’s demands and legal requirements through local offices in various areas and nations. Our offices are located in&amp;nbsp;</span>
+                                <strong style="font-weight: 600;color: rgb(35, 52, 82);font-size: 18px;font-style: normal;background-color: rgb(255, 255, 255)" class="o_default_snippet_text">Canada, India,</strong>
+                                <span style="color: rgb(35, 52, 82);font-size: 18px;font-style: normal;font-weight: 400;background-color: rgb(255, 255, 255)" class="o_default_snippet_text">&amp;nbsp;Rwanda and the&amp;nbsp;</span>
+                                <strong style="font-weight: 600;color: rgb(35, 52, 82);font-size: 18px;font-style: normal;background-color: rgb(255, 255, 255)" class="o_default_snippet_text">United Arab Emirates.</strong>
+                            </p>
+                            <p>
+                                <br/>
+                            </p>
+                            <p style="text-align: left;">
+                                <span style="color: rgb(35, 52, 82); font-style: normal; background-color: rgb(255, 255, 255); font-size: 24px;">
+                                    <font style="color: rgb(8, 82, 148);">
+                                        <strong/>
+                                    </font>
+                                </span>
+                                <span style="color: rgb(35, 52, 82); background-color: rgb(255, 255, 255); font-size: 24px;">
+                                    <font style="color: rgb(0, 0, 255);">
+                                        <strong>
+                                            <a href="https://carelabz.com/company/global-presence/" data-bs-original-title="" title="">
+                                                <em/>
+                                            </a>
+                                        </strong>
+                                    </font>
+                                </span>
+                                <span style="color: rgb(35, 52, 82); font-style: normal; background-color: rgb(255, 255, 255); font-size: 24px;">
+                                    <font style="color: rgb(8, 82, 148);">
+                                        <strong/>
+                                    </font>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="o_colored_level o_grid_item g-height-2 g-col-lg-4 col-lg-4" style="z-index: 3; grid-area: 7 / 5 / 9 / 9;">
+                            <p style="text-align: left;">
+                                <a class="mb-2 btn btn-primary btn-lg" href="https://carelabz.com/company/global-presence/" data-bs-original-title="" title="" target="_blank">Explore Our Global Reach</a>
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </t>
+    </template>
+    <!-- end sales enquiry form template  -->
+
+    <!-- sales enquiry thank you form template  -->
+    <template id="sales_enquiry_contactus_thanks" name="Sales Contact us Thanks">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_text_block pt40 pb40 o_colored_level " data-snippet="s_text_block">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-7 col-xl-6 me-lg-auto">
+                                <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/>
+                                <br/>
+                                <h1 class="text-center">Thank You!</h1>
+                                <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                    <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                </div>
+                                <h5 class="text-center">
+                                    <span class="fa fa-check-circle"/>
+                                    <span>Your message has been sent <b>successfully</b>
+                                    </span>
+                                </h5>
+                                <p class="text-center">We will get back to you shortly.</p>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <input t-if='website.plausible_shared_key' type='hidden' class='js_plausible_push' data-event-name='Lead Generation' data-event-params='{"CTA": "Contact Us"}' />
+        </t>
+    </template>
+    <!-- end sales enquiry thank you form template  -->
+
+    <!-- sales enquiry schedule meeting form template  -->
+    <template id="crm_lead_schedule_meeting" name="Schedule Meeting Website">
+        <t t-call="website.layout">
+            <div id="meeting_schedule_form_div" class="container mt-5">
+                <h1>Schedule a Meeeting</h1>
+                <p>Please fill in the details below to schedule your meeting. Make sure to select the appropriate date and time for your convenience.</p>
+                <form action="/schedule/meeting/submit" method="post" id="meeting_schedule_form"  class="meeting_schedule_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="lead_id" t-att-value="request.params.get('lead_id')"/>
+                    <div class="form-group row mb-3">
+                        <label for="meeting_start" class="col-sm-auto col-form-label" style="width: 150px">Start Date and Time *</label>
+                        <input type="datetime-local" class="form-control col-sm" name="meeting_start" id="meeting_start" required="required" />
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="meeting_end" class="col-sm-auto col-form-label" style="width: 150px">End Date and Time *</label>
+                        <input type="datetime-local" class="form-control col-sm" name="meeting_end" id="meeting_end" required="required" />
+                    </div>
+                    <p id="errorMessage" class="text-danger" style="display: none;"></p>
+                    <button type="submit" class="btn btn-primary">Schedule Meeting</button>
+                </form>
+                <p>We look forward to meeting with you. Please ensure all details are correct before submitting the form.</p>
+            </div>
+        </t>
+    </template>
+    <!-- sales enquiry schedule meeting form template  -->
+
+
+
+</odoo>

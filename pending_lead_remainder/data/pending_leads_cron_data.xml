@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Scheduled action to check pending leads -->
+    <record id="ir_cron_check_pending_leads" model="ir.cron">
+        <field name="name">Check Pending Leads</field>
+        <field name="model_id" ref="model_crm_lead"/>
+        <field name="state">code</field>
+        <field name="code">model.check_pending_leads()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+    </record>
+</odoo>

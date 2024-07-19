@@ -1,0 +1,20 @@
+<odoo>
+    <record id="crm_case_form_view_oppor" model="ir.ui.view">
+        <field name="name">crm.lead.oppor.inherited.crm</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Ensure the form is editable -->
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit">true</attribute>
+            </xpath>
+            <!-- Insert the button into the header of the form view -->
+            <xpath expr="//header" position="inside">
+                <button name="action_convert_to_lead" type="object" 
+                        string="Convert to Lead" class="btn-primary"
+                        invisible="type == 'lead' or not active"
+                        data-hotkey="v"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
